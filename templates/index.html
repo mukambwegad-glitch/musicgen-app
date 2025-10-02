@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MusicGen App</title>
+</head>
+<body>
+    <h1>Text to Music Generator</h1>
+    <form method="POST">
+        <input type="text" name="prompt" placeholder="Enter your prompt" required>
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if audio_file %}
+        <h2>Generated for: "{{ prompt }}"</h2>
+        <audio controls>
+            <source src="{{ audio_file }}" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    {% endif %}
+</body>
+</html>
